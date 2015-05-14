@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack");
 
 module.exports = {
   entry: './app/index.js',
@@ -13,5 +14,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.json', '.scss']
-  }
+  },
+  plugins: [
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    )
+  ]
 };

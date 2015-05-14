@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": [1, "single"],
+    "no-console": false,
+    "no-var": true,
+    "no-use-before-define": false,
+    "camelcase": true,
+    "strict": false,
+    "new-cap": true
+  },
+  "ecmaFeatures": {
+    "templateStrings": true,
+    "blockBindings": true,
+    "modules": true,
+    "arrowFunctions": true
+  },
+  "globals": {
+    "document": true,
+    "console": true,
+    "window": true,
+    "io": true,
+    "$": true,
+    "jQuery": true
+  }
+}
