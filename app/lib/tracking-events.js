@@ -1,24 +1,18 @@
-const template = require('../templates/face-statistics.hbs');
-
-import $ from 'jquery';
-
-const $statistics = $('#statistics');
+import { overlayContext } from './page-elements.js';
 
 export function headtrackerStatus() {
   console.log(event.status);
 }
 
-export function facetrackingEvent(overlayContext, { x, y, angle, detection, width, height }) {
-  overlayContext.clearRect(0, 0, 640, 480);
-
-  $statistics.html(template({x: x, y: y, width: width, height}));
+export function facetrackingEvent({ x, y, angle, detection, width, height }, context = overlayContext) {
+  context.clearRect(0, 0, 640, 480);
 
   if (detection === 'CS') {
-    overlayContext.translate(x, y);
-    overlayContext.rotate(angle - (Math.PI / 2));
-    overlayContext.strokeStyle = '#00CC00';
-    overlayContext.strokeRect((-(width / 2)) >> 0, (-(height / 2)) >> 0, width, height);
-    overlayContext.rotate((Math.PI / 2) - angle);
-    overlayContext.translate(-x, -y);
+    context.translate(x, y);
+    context.rotate(angle - (Math.PI / 2));
+    context.strokeStyle = '#00CC00';
+    context.strokeRect((-(width / 2)) >> 0, (-(height / 2)) >> 0, width, height);
+    context.rotate((Math.PI / 2) - angle);
+    context.translate(-x, -y);
   }
 }

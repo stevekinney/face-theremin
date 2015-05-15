@@ -1,0 +1,27 @@
+@import './colors';
+
+@mixin button-color($color) {
+  background-color: $color;
+  border-color: darken($color, 5);
+
+  &:hover {
+    background-color: darken($color, 5);
+    border-color: darken($color, 10);
+  }
+}
+
+button {
+  @include button-color($ocean);
+
+  border-style: solid;
+  border-width: 1px;
+  color: $white;
+  display: block;
+  font-size: 1.2em;
+  padding: .5em;
+  width: 100%;
+}
+
+.off {
+  @include button-color($red);
+}

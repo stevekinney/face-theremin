@@ -17,7 +17,9 @@
     "blockBindings": true,
     "modules": true,
     "arrowFunctions": true,
-    "destructuring": true
+    "destructuring": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralShorthandMethods": true
   },
   "globals": {
     "document": true,
