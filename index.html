@@ -1,34 +1,17 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Face Theremin</title>
-  <link rel="stlesheet" href="assets/style.css">
-</head>
+	<head>
+		<title>facetracking</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script src="./javascripts/headtrackr.js"></script>
 
-<body>
+		<canvas id="compare" width="320" height="240" style="display:none"></canvas>
+		<video id="input-video" autoplay loop width="320" height="240"></video>
+		<canvas id="overlay" width="320" height="240"></canvas>
 
-  <div class="container">
-
-    <h1>Face Theremin</h1>
-
-    <div class="face-frame">
-      <div class="face-container">
-        <video id="video" width="320" height="240" preload autoplay loop muted></video>
-      </div>
-    </div>
-
-    <div class="information">
-      <p>X: <span class="information x"></span></p>
-      <p>Y: <span class="information y"></span></p>
-      <button class="on-off">On</button>
-    </div>
-
-  </div>
-
-  <script src="/bower_components/tracking.js/build/tracking.js"></script>
-  <script src="/bower_components/tracking.js/build/data/face.js"></script>
-  <script src="bundle.js"></script>
-</body>
+		<script src="bundle.js"></script>
+	</body>
 </html>

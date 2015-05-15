@@ -34,8 +34,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
-    "dat": "^6.9.7",
-    "dat-gui": "^0.5.0",
+    "headtrackr": "git://github.com/stevekinney/headtrackr#webpack-compatibility",
     "jquery": "^2.1.4",
     "octavian": "^2.0.5"
   }

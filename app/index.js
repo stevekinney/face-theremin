@@ -1,36 +1,40 @@
-/* globals tracking */
+/* globals headtrackr */
 
-require('./assets/style');
+require('./assets/style.scss');
 
-import $ from 'jquery';
-import context from './lib/audio-context';
-import createOnOffSwitch from './lib/adjust-volume';
+// set up video and canvas elements needed
 
-const $x = $('.information.x');
-const $y = $('.information.y');
+var videoInput = document.getElementById('input-video');
+var canvasInput = document.getElementById('compare');
+var canvasOverlay = document.getElementById('overlay');
+var overlayContext = canvasOverlay.getContext('2d');
 
-const oscillator = context.createOscillator();
-const gain = context.createGain();
+canvasOverlay.style.position = 'absolute';
+canvasOverlay.style.top = '0px';
+canvasOverlay.style.zIndex = '100001';
+canvasOverlay.style.display = 'block';
 
-const volume = gain.gain;
-volume.value = 0;
+document.addEventListener('headtrackrStatus', function(event) {
+  console.log(event.status);
+}, true);
 
-createOnOffSwitch($('.on-off'), volume);
+// the face tracking setup
 
-oscillator.connect(gain);
-gain.connect(context.destination);
-oscillator.start();
+var htracker = new headtrackr.Tracker({ calcAngles: true, ui: false, headPosition: false });
+htracker.init(videoInput, canvasInput);
+htracker.start();
 
-const tracker = new tracking.ObjectTracker('face');
-tracking.track('#video', tracker, { camera: true });
+// for each facetracking event received draw rectangle around tracked face on canvas
 
-tracker.on('track', function(event) {
-  if (event.data.length) {
-    const face = event.data[0];
+document.addEventListener('facetrackingEvent', function(event) {
+  overlayContext.clearRect(0, 0, 320, 240);
 
-    oscillator.frequency.value = face.x * 2 + 220;
-
-    $x.text(face.x);
-    $y.text(face.y);
+  if (event.detection === 'CS') {
+    overlayContext.translate(event.x, event.y);
+    overlayContext.rotate(event.angle - (Math.PI / 2));
+    overlayContext.strokeStyle = '#00CC00';
+    overlayContext.strokeRect((-(event.width / 2)) >> 0, (-(event.height / 2)) >> 0, event.width, event.height);
+    overlayContext.rotate((Math.PI / 2) - event.angle);
+    overlayContext.translate(-event.x, -event.y);
   }
 });

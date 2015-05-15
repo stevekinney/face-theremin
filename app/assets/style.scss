@@ -9,6 +9,15 @@
   box-sizing: border-box;
 }
 
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  width: 40%;
+  overflow: hidden;
+  position: relative;
+}
+
 .container {
   margin: auto;
   max-width: 500px;
