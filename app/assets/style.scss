@@ -10,16 +10,22 @@
 }
 
 body {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  width: 40%;
   overflow: hidden;
   position: relative;
 }
 
 .container {
+  margin: 1em auto;
+  max-width: 640px;
+}
+
+.face-container {
+  max-width: 320px;
   margin: auto;
-  max-width: 500px;
   position: relative;
+}
+
+video {
+  background-color: #EEE;
+  border: 5px solid #EEE;
 }

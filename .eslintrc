@@ -16,7 +16,8 @@
     "templateStrings": true,
     "blockBindings": true,
     "modules": true,
-    "arrowFunctions": true
+    "arrowFunctions": true,
+    "destructuring": true
   },
   "globals": {
     "document": true,
