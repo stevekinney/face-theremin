@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "bower install",
-    "build": "./node_modules/webpack/bin/webpack.js",
+    "build": "mkdir dist && cp index.html dist/index.html && ./node_modules/webpack/bin/webpack.js && git commit -am \"Build application\"",
+    "deploy": "npm run build && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
