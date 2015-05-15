@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face Theremin</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script src="./javascripts/headtrackr.js"></script>
+
+		<div class="container">
+			<div class="face-container">
+				<canvas id="compare" width="320" height="240" style="display:none"></canvas>
+				<video id="input-video" autoplay loop width="320" height="240"></video>
+				<canvas id="overlay" width="320" height="240"></canvas>
+				<button id="on-off">On</button>
+				<div id="face-statistics"></div>
+				<div id="synth-statistics"></div>
+			</div>
+		</div>
+
+		<script src="bundle.js"></script>
+	</body>
+</html>
