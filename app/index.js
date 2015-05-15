@@ -4,7 +4,7 @@ require('./assets/style');
 
 import $ from 'jquery';
 import context from './lib/audio-context';
-import createOnOffSwitch from './lib/audio-context';
+import createOnOffSwitch from './lib/adjust-volume';
 
 const $x = $('.information.x');
 const $y = $('.information.y');
@@ -12,18 +12,16 @@ const $y = $('.information.y');
 const oscillator = context.createOscillator();
 const gain = context.createGain();
 
-let volume = gain.gain;
+const volume = gain.gain;
 volume.value = 0;
 
 createOnOffSwitch($('.on-off'), volume);
 
 oscillator.connect(gain);
 gain.connect(context.destination);
-
 oscillator.start();
 
 const tracker = new tracking.ObjectTracker('face');
-
 tracking.track('#video', tracker, { camera: true });
 
 tracker.on('track', function(event) {
