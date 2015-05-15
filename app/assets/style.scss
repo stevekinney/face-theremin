@@ -1,7 +1,10 @@
+@import './colors.scss';
+@import './typography.scss';
+@import './table.scss';
+
 * {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -26,6 +29,6 @@ body {
 }
 
 video {
-  background-color: #EEE;
-  border: 5px solid #EEE;
+  background-color: $pale;
+  border: 5px solid darken($pale, 10);
 }

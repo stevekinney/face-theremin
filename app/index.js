@@ -15,6 +15,6 @@ configureCanvasOverlay(canvasOverlay);
 document.addEventListener('headtrackrStatus', headtrackrStatus, true);
 document.addEventListener('facetrackingEvent', facetrackingEvent.bind(null, overlayContext));
 
-const htracker = new headtrackr.Tracker({ calcAngles: true, ui: false, headPosition: false });
+const htracker = new headtrackr.Tracker({ calcAngles: true, ui: true, headPosition: true });
 htracker.init(videoInput, canvasInput);
 htracker.start();

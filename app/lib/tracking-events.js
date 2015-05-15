@@ -1,9 +1,17 @@
+const template = require('../templates/face-statistics.hbs');
+
+import $ from 'jquery';
+
+const $statistics = $('#statistics');
+
 export function headtrackerStatus() {
   console.log(event.status);
 }
 
 export function facetrackingEvent(overlayContext, { x, y, angle, detection, width, height }) {
   overlayContext.clearRect(0, 0, 640, 480);
+
+  $statistics.html(template({x: x, y: y, width: width, height}));
 
   if (detection === 'CS') {
     overlayContext.translate(x, y);
