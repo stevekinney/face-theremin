@@ -19,7 +19,7 @@ export default {
   update({x, height}) {
 
     const frequency = x * 1.5 + 220;
-    const gain = height / 100;
+    const gain = height / 150;
 
     if (this.isOn) {
       this.oscillator.frequency.value = frequency;
