@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@mixin table-typography($weight) {
+  text-align: left;
+  font-weight: $weight;
+}
+
+th {
+  @include table-typography(400);
+  width: 50%;
+}
+
+td {
+  @include table-typography(300);
+}

@@ -1,24 +1,37 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Face Theremin</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 		<meta charset="utf-8">
+    <title>Face Theremin</title>
+    <link href="src/components/fira/fira.css" rel="stylesheet">
 	</head>
 	<body>
-		<script src="./dist/headtrackr.js"></script>
 
 		<div class="container">
-			<div class="face-container">
-				<canvas id="compare" width="320" height="240" style="display:none"></canvas>
-				<video id="input-video" autoplay loop width="320" height="240"></video>
-				<canvas id="overlay" width="320" height="240"></canvas>
-				<button id="on-off">On</button>
-				<div id="face-statistics"></div>
-				<div id="synth-statistics"></div>
-			</div>
+
+      <h1>Face Theremin</h1>
+      <p><strong>Instructions</strong>: Press start and let the application detect your face. Once it has a lock on your face, you can move your head to thr right or left to adjust the frequency of the sound being played. Moving your head closer will increase the volume. Moving your head farther from the screen will decrease the volume of the tone being played.</p>
+      <p>If you enjoyed this, check out <a href="http://github.com/stevekinney/audiophonic">the source code on Github</a> or <a href="http://twitter.com/stevekinney">follow Steve on Twitter</a>.</p>
+
+			<div class="columns">
+  			<div class="face-container column">
+  				<canvas id="compare" width="320" height="240" style="display:none"></canvas>
+  				<video id="input-video" autoplay loop width="320" height="240"></video>
+  				<canvas id="overlay" width="320" height="240"></canvas>
+  				<button id="on-off">On</button>
+  			</div>
+
+        <div class="statistics column">
+          <div id="message"></div>
+  				<div id="face-statistics"></div>
+  				<div id="synth-statistics"></div>
+        </div>
+      </div>
+
 		</div>
 
+    <script src="src/vendor/headtrackr.js"></script>
 		<script src="bundle.js"></script>
 	</body>
 </html>

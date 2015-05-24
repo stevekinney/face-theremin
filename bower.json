@@ -1,0 +1,29 @@
+{
+  "name": "face-theremin",
+  "version": "0.0.1",
+  "homepage": "https://github.com/stevekinney/face-theremin",
+  "authors": [
+    "Steve Kinney <hello@stevekinney.net>"
+  ],
+  "description": "Make some music with your face.",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "music",
+    "getusermedia"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fira": "~0.1.0"
+  }
+}

@@ -1,0 +1,48 @@
+@import './colors';
+@import './typography';
+@import './table';
+@import './button';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  margin: 1em auto;
+  max-width: 640px;
+}
+
+.column {
+  width: 50%;
+  float: left;
+}
+
+.face-container {
+  max-width: 320px;
+  position: relative;
+}
+
+.statistics {
+  padding-left: 1em;
+}
+
+#message {
+  background-color: lighten($lightBlue, 10);
+  border: 1px solid $lightBlue;
+  font-weight: 300;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+video {
+  background-color: $pale;
+  border: 5px solid darken($pale, 10);
+}
